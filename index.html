@@ -32,3 +32,33 @@
             <button onclick="filterTodos('done')">Done</button>
             <button onclick="filterTodos('todo')">Todo</button>
         </div>
+         <ul id="todoList" class="todo-list">No Tasks 📝</ul>
+
+        <div class="footer-buttons">
+            <button onclick="deleteDoneTodos()">Delete done tasks</button>
+            <button onclick="deleteAllTodos()">Delete all tasks</button>
+        </div>
+    </div>
+
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <h2>Rename Task</h2>
+            <input type="text" id="editTodoInput">
+            <span class="error" id="edit-error-message"></span>
+            <div class="modal-actions">
+                <button class="save" onclick="saveEditTodo()">Save</button>
+                <button class="cancel" onclick="closeEditModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <h2>Delete Task</h2>
+            <p>Are you sure you want to delete this task?</p>
+            <div class="modal-actions">
+                <button class="confirm" onclick="confirmDeleteTodo()">Confirm</button>
+                <button class="cancel" onclick="closeDeleteModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
