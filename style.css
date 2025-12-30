@@ -272,3 +272,34 @@ h1 {
 .modal-content .cancel:hover {
     background-color: #d32f2f;
 }
+
+.form-control {
+    flex-grow: 1;
+    padding: 0.6rem;
+    border: 0.06rem solid #ddd;
+    border-radius: 0.3rem;
+}
+
+.message-box {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 0.6rem;
+    margin-top: 0.6rem;
+    border: 0.06rem solid #f5c6cb;
+    border-radius: 0.3rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    animation: fadeInOut 3s ease-in-out;
+
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        padding: 0.6rem;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
