@@ -31,3 +31,24 @@ checktodos.forEach((todo, index) => {
         todoList.appendChild(li);
     });
 }
+function msgshow(message) {
+    const container = document.querySelector('.container');
+    const existingMessageBox = container.querySelector('.message-box');
+    if (existingMessageBox) {container.removeChild(existingMessageBox);}
+    const messageBox = document.createElement('div');
+    messageBox.className = 'message-box';
+
+    const successMessages = [
+        'Task added successfully 🎉',
+        'Task has been deleted.',
+        'Task has been edited.'
+    ];
+    if (successMessages.includes(message)) {
+        messageBox.style.backgroundColor = '#d4edda';
+        messageBox.style.color = '#155724';
+        messageBox.style.border = '1px solid #c3e6cb';
+    }
+    messageBox.textContent = message;
+    container.appendChild(messageBox);
+    setTimeout(() => { container.removeChild(messageBox);}, 3000);
+}
