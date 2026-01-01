@@ -17,3 +17,17 @@ if (checktodos.length === 0) {
     todoList.innerHTML = 'No Tasks 📝';
     return;
 }
+checktodos.forEach((todo, index) => {
+        const li = document.createElement('li');
+        li.className = `todo-item ${todo.done ? 'done' : ''}`;
+        li.innerHTML = `
+            <span>${todo.text}</span>
+            <div class="todo-actions">
+                <button class="toggle" onclick="toggle(${index})">${todo.done ? '<i class="fa-regular fa-square-check"></i>' : '<i class="fa-regular fa-square"></i>'}</button>
+                <button class="edit" onclick="openedit(${index})"><i class="fa-solid fa-pen"></i></button>
+                <button class="delete" onclick="deleteTodo(${index})"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        `;
+        todoList.appendChild(li);
+    });
+}
